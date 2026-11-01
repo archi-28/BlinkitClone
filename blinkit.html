@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blinkit | Groceries in minutes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    * { box-sizing: border-box; }
+body { margin: 0; color: #222; font-family: Arial, Helvetica, sans-serif; background: #fff; }
+button { border: 0; cursor: pointer; font: inherit; }
+.header { min-height: 76px; padding: 12px 5%; display: flex; align-items: center; gap: 28px; border-bottom: 1px solid #eee; }
+.logo { font-size: 30px; font-weight: 800; color: #f8cb46; text-decoration: none; letter-spacing: -2px; }
+.logo span { color: #54b226; }
+.delivery { min-width: 200px; font-size: 14px; line-height: 1.5; }
+.delivery span { color: #666; font-size: 12px; }
+.search { flex: 1; padding: 14px 18px; background: #f7f7f7; border: 1px solid #eee; border-radius: 8px; font-size: 14px; }
+.login, .cart { background: white; padding: 12px; font-size: 15px; }
+.cart { color: white; background: #0c831f; border-radius: 8px; }
+.container { max-width: 1180px; padding: 26px 20px 50px; margin: auto; }
+.hero { min-height: 280px; padding: 38px 6%; display: flex; align-items: center; justify-content: space-between; overflow: hidden; border-radius: 16px; background: #fff6d9; }
+.hero h1 { margin: 8px 0; font-size: clamp(28px, 4vw, 44px); line-height: 1.1; }
+.hero p { color: #555; }
+.hero .eyebrow { color: #0c831f; font-weight: bold; font-size: 12px; letter-spacing: 1px; }
+.shop { background: #0c831f; color: white; padding: 12px 20px; border-radius: 7px; margin-top: 8px; }
+.hero-art { font-size: clamp(70px, 12vw, 140px); white-space: nowrap; }
+.promos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 26px 0 42px; }
+.promo { min-height: 155px; padding: 20px; display: flex; align-items: center; justify-content: space-between; border-radius: 14px; }
+.promo h2 { margin: 0 0 6px; font-size: 20px; }
+.promo p { margin: 0 0 15px; color: #555; font-size: 13px; }
+.promo button { background: #fff; padding: 9px 12px; border-radius: 6px; font-size: 12px; }
+.promo span { font-size: 58px; }
+.pharmacy { background: #e4f5fa; }.pets { background: #fff0df; }.baby { background: #fce8ec; }
+.categories h2 { font-size: 23px; margin-bottom: 18px; }
+.category-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+.category { min-height: 130px; padding: 16px 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; background: #fafafa; border: 1px solid #f0f0f0; border-radius: 10px; text-align: center; }
+.category span { font-size: 42px; }.category p { margin: 0; font-size: 14px; }
+.footer { padding: 35px 5% 16px; background: #f7f7f7; }
+.footer-top { max-width: 1140px; margin: auto; display: flex; justify-content: space-between; gap: 30px; flex-wrap: wrap; }
+.footer h3 { font-size: 15px; }.footer-top div a { display: block; margin: 10px 0; color: #666; text-decoration: none; font-size: 13px; }
+.copyright { border-top: 1px solid #e5e5e5; margin: 24px auto 0; padding-top: 14px; max-width: 1140px; color: #777; font-size: 12px; }
+@media (max-width: 760px) {
+  .header { padding: 12px 16px; gap: 12px; flex-wrap: wrap; }
+  .logo { font-size: 27px; }.delivery { flex: 1; min-width: 150px; }.search { order: 5; flex-basis: 100%; }
+  .login { margin-left: auto; }.cart { padding: 10px; }
+  .container { padding: 18px 14px 36px; }
+  .hero { min-height: 245px; padding: 26px 22px; }.hero-art { font-size: 68px; }
+  .promos { grid-template-columns: 1fr; gap: 12px; margin: 18px 0 32px; }.promo { min-height: 125px; }
+  .category-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }.category { min-height: 115px; }
+  .footer-top { gap: 16px; }.footer-top > * { min-width: 42%; }
+}
+@media (max-width: 420px) { .delivery { font-size: 12px; }.hero-art { font-size: 50px; }.hero { padding: 22px 16px; }.hero p { font-size: 13px; } }
+</style>
+<body>
+  <header class="header">
+    <a class="logo" href="#">blink<span>it</span></a>
+    <div class="delivery"><strong>Delivery in 10 minutes</strong><br><span>Home · New Delhi, India</span></div>
+    <input class="search" type="search" placeholder="Search for products">
+    <button class="login">Login</button>
+    <button class="cart">🛒 My Cart</button>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div><p class="eyebrow">GROCERIES AT YOUR DOORSTEP</p><h1>Everything you need,<br>delivered in minutes.</h1><p>Fresh groceries and everyday essentials, right when you need them.</p><button class="shop">Shop Now →</button></div>
+      <div class="hero-art" aria-label="Basket of groceries">🧺🥑🍅🥛</div>
+    </section>
+
+    <section class="promos" aria-label="Featured stores">
+      <article class="promo pharmacy"><div><h2>Pharmacy</h2><p>Medicines &amp; wellness</p><button>Order now →</button></div><span>🩺</span></article>
+      <article class="promo pets"><div><h2>Pet Care</h2><p>For your furry friends</p><button>Shop now →</button></div><span>🐶</span></article>
+      <article class="promo baby"><div><h2>Baby Care</h2><p>Little ones, covered</p><button>Shop now →</button></div><span>🍼</span></article>
+    </section>
+
+    <section class="categories">
+      <h2>Shop by category</h2>
+      <div class="category-grid">
+        <article class="category"><span>🍎</span><p>Fresh Fruits</p></article>
+        <article class="category"><span>🥦</span><p>Vegetables</p></article>
+        <article class="category"><span>🥛</span><p>Dairy &amp; Eggs</p></article>
+        <article class="category"><span>🍞</span><p>Bakery</p></article>
+        <article class="category"><span>🍪</span><p>Snacks</p></article>
+        <article class="category"><span>🧃</span><p>Cold Drinks</p></article>
+        <article class="category"><span>🧼</span><p>Personal Care</p></article>
+        <article class="category"><span>🧹</span><p>Home Care</p></article>
+        <article class="category"><span>🍚</span><p>Staples</p></article>
+        <article class="category"><span>🧊</span><p>Instant Food</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top"><a class="logo" href="#">blink<span>it</span></a><div><h3>Useful Links</h3><a href="#">About Us</a><a href="#">Careers</a><a href="#">FAQs</a></div><div><h3>Categories</h3><a href="#">Fruits &amp; Vegetables</a><a href="#">Dairy &amp; Bakery</a><a href="#">Snacks &amp; Drinks</a></div><div><h3>Get the app</h3><p>📱 App Store　▶ Google Play</p><p>Follow us:　📷　●　𝕏</p></div></div>
+    <p class="copyright">© 2025 Blinkit. All rights reserved.</p>
+  </footer>
+</body>
+</html>
